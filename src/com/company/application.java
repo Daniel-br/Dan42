@@ -42,7 +42,7 @@ public class application extends JFrame {
                 System.out.println(a + " Key released");
           }
           public void keyTyped(KeyEvent args0){
-          //
+          ///
           }
 
 

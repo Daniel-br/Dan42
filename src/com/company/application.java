@@ -3,8 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.*;
-public class application extends JFrame {
-    private JLabel iLabel;
+public class application extends javax.swing.JFrame implements MouseListener {
+    private JLabel iLabel, cross;
     private JTextField aTF;
     public application() {
         // iLabel Attributes
@@ -49,6 +49,37 @@ public class application extends JFrame {
 
         } );
 
+        // Cross Label
+        cross = new JLabel("ASDA");
+        cross.setSize(30,10);
+        cross.setVisible(false);
+        cross.setLocation(250,250);
+        getContentPane().add(cross);
+        // Mouse Listener
+        getContentPane().addMouseListener(new java.awt.event.MouseAdapter(){
+            @Override
+            public void mousePressed(MouseEvent e){
+                System.out.println("Mouse Pressed At X:"+ e.getX() + " Y:" +e.getY());
+                //cross = new JLabel("X:" + e.getX()+ " Y:"+e.getY());
+                //cross.setSize(30,10);
+                cross.setLocation(e.getX(), e.getY());
+                cross.setVisible(true);
+                getContentPane().add(cross);
+            }
+            @Override
+            public void mouseDragged(MouseEvent e) {
+                cross.setLocation(e.getX(), e.getY());
+            }
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                cross.setVisible(false);
+            }
+
+        });
+
+
+
+
         // Frame Attributes
         this.setSize(500,500);
         this.setLayout(null);
@@ -57,7 +88,35 @@ public class application extends JFrame {
         this.setTitle("ill tell u hwat");
     }
 
+
+
     public static void main(String[] args) {
         // write your code here
+        application app = new application();
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+
     }
 }

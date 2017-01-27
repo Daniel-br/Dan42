@@ -50,10 +50,11 @@ public class application extends JFrame {
         } );
 
         // Frame Attributes
-        setSize(500,500);
-        setLayout(null);
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setSize(500,500);
+        this.setLayout(null);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setTitle("ill tell u hwat");
     }
 
     public static void main(String[] args) {
